@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Дюжев</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		#contain {
+			height: 1500px;
+			width: 1500px;
+			margin-top: 50px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="contain"></div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			$("#contain").click(function (e) {
+				var x = e.pageX - 5 + 'px';
+				var y = e.pageY - 5 + 'px';
+				var img = $(
+					'<img src="https://sun9-13.userapi.com/impg/Qp_esSXVQQq0q3n98G7iZMNCT3G0nyrXeZAoaQ/pRG00OJvfO4.jpg?size=1200x792&quality=96&proxy=1&sign=b88093a81d7e9e70ac46c7d85308c87f&type=album" style="  height: 400px;width: 400px;border: solid 1px black;" />'
+					);
+				var div = $('<div>').css({
+					"position": "absolute",
+					"left": x,
+					"top": y
+				});
+				div.append(img);
+				$("#contain").append(div);
+			});
+		});
+	</script>
+</body>
+</html>
